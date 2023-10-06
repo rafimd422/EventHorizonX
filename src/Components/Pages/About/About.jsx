@@ -30,7 +30,7 @@ Our mission is to transform your concepts and dreams into captivating realities,
   </div>
 </div>
 
-<img src={teamPicture2} className="md:max-w-2xl mx-auto max-w-sm p-1 rounded-lg shadow-2xl" />
+<img src={teamPicture2} className="xl:max-w-4xl md:max-w-2xl mx-auto max-w-sm p-1 rounded-lg shadow-2xl" />
 
 <div className='container p-4 mx-auto'>
   <h3 className='text-2xl font-bold text-white my-6'>Weaving Together the Threads:
