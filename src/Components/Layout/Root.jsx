@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Nav from '../ShereAble/Nav'
-import Footer from './../ShereAble/Footer';
+import Nav from '../FixedRoute/Nav'
+import Footer from '../FixedRoute/Footer';
 
 const Root = () => {
   return (
