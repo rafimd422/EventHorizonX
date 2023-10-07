@@ -9,7 +9,6 @@ const Service = () => {
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
-
   return (
     <div className="h-fit my-20 ">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-16 mx-auto shadow-lg container">
@@ -23,7 +22,7 @@ const Service = () => {
               <div className="font-bold text-xl mb-2">{service.title}</div>
               <p className="text-gray-400 text-base">
                 {service.description.slice(0, 130)}{" "}
-                <Link className="text-blue-700 font-bold" to={"serviceDetails"}>
+                <Link className="text-blue-700 font-bold" to={`/serviceDetails/${service.id}`}>
                   Read more...
                 </Link>
               </p>

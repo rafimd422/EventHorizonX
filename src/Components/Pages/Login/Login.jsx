@@ -105,7 +105,7 @@ toast.custom((t) => (
   return (
 <>
 
-<Helmet helmetData={helmetData}>
+      <Helmet helmetData={helmetData}>
         <title>Log In | EventHorizonX</title>
       </Helmet>
 
