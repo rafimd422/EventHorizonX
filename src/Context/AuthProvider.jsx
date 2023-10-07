@@ -7,6 +7,7 @@ import auth from './../../firebase.config';
 
 
 
+
 export const AuthContext = createContext(null)
 
 
@@ -24,7 +25,7 @@ const AuthProvider = ({children}) => {
     const verify = () => {
       return sendEmailVerification(auth.currentUser)
    }
-
+    
 
 
 

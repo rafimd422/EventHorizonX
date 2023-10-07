@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import auth from '../../../../firebase.config';
 
 const Register = () => {
   const [error, setError] = useState('');
@@ -10,11 +12,44 @@ const Register = () => {
 
 const {signUp, verify} = useContext(AuthContext)
 
-
-
-
-
 const Navigate = useNavigate()
+//handler for google login
+const loginGoogle = () =>{
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then(result =>{
+    const user = result.user;
+    console.log(user)
+    toast.success('Registration successful!', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });  setTimeout(() => {
+      Navigate('/');
+    }, 3000);
+  
+}).catch(error =>{
+  console.log(error.message)
+  toast.success(error.message, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    }); 
+})
+}
+// done
+
+
 const handleRegister = e =>{
 e.preventDefault()
 const email = e.target.email.value;
@@ -41,7 +76,7 @@ signUp(email,password)
 .then(result =>{
   const user = result.user;
   console.log(user)
-  toast.success('Registration Successfull!', {
+  toast.success('Registration Successful!', {
     position: "top-center",
     autoClose: 5000,
     hideProgressBar: true,
@@ -115,10 +150,10 @@ signUp(email,password)
         {error && <p className="text-red-700">{error}</p>}
         {success && <p className="text-success">{success}</p>}
 {/* google button  */}
-        <button
+        <button onClick={loginGoogle}
     className="px-4 py-2 border flex gap-2 border-slate-200 rounded-lg text-slate-700 bg-white hover:border-slate-400 hover:text-slate-900 p-4">
     <img className="w-6 h-6 ms-auto" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" />
-    <span className='me-auto'>Login with Google</span>
+    <span className='me-auto'>Continue with Google</span>
 </button>
 {/* google button  */}
 

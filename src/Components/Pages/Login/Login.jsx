@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
+import { ToastContainer } from 'react-toastify';
+import auth from '../../../../firebase.config';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
 
@@ -10,6 +13,37 @@ const Login = () => {
 
   const { signIn } = useContext(AuthContext)
 const navigate = useNavigate()
+
+
+// Handler for google log in
+const loginGoogle = () =>{
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then(result =>{
+    const user = result.user;
+    console.log(user)
+    toast.success('Logged in successful!', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });  setTimeout(() => {
+      navigate('/');
+    }, 3000);
+  
+}).catch(error =>{
+  console.log(error.message)
+})
+}
+// Handler for google log in
+
+
+
+
     const handleLogIn = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -103,21 +137,32 @@ toast.custom((t) => (
           </div>
         </form>
 {/* google button  */}
-        <button
+        <button onClick={loginGoogle}
     className="px-4 py-2 border flex gap-2 border-slate-200 rounded-lg text-slate-700 bg-white hover:border-slate-400 hover:text-slate-900 p-4">
     <img className="w-6 h-6 ms-auto" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" />
-    <span className='me-auto'>Login with Google</span>
+    <span className='me-auto'>Continue with Google</span>
 </button>
 {/* google button  */}
 {error && <p className="text-red-700">{error}</p>}
         {success && <p className="text-success">{success}</p>}
         <p>New to our website? Please <Link className='text-blue-800 font-bold' to={'/register'}>Register</Link></p>
       </div>
+      <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
     </div>
     <Toaster
   position="top-center"
   reverseOrder={false} />
-
   </div>
 </div>
 </>
