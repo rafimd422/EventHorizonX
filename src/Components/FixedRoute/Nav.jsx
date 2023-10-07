@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { FaAlignRight } from "react-icons/fa6";
 import { FaXmark } from "react-icons/fa6";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './Nav.css'
 import { AuthContext } from "../../Context/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -26,9 +26,9 @@ const logOut = () =>{
     progress: undefined,
     theme: "light",
     });
-
-    
-}).catch((error) => {
+    window.location.reload();
+})
+.catch((error) => {
       console.log(error.message)
     });
   }
@@ -75,9 +75,24 @@ const logOut = () =>{
 
                             {!user ? (<li className=" hover:text-blue-600 text-center">
                                 <NavLink to={"/login"}>LogIN</NavLink> 
-                            </li> ):                             (<li className=" hover:text-blue-600 text-center">
+                            </li> ):                             (
+                             <div className="flex items-center flex-col-reverse">
+                                <p className="font-extrabold">{user?.displayName}</p>
+                                <div className="dropdown dropdown-end pt-2">
+                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                               <div className="w-10 rounded-full">
+                                
+                                 <img className="object-cover" src={user?.photoURL} />
+                               </div>
+                             </label>
+                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                               <li className=" hover:text-blue-600 text-center
+                               p-2">
                                 <button onClick={logOut}>LOGOUT</button> 
-                            </li>)}
+                            </li>                             </ul>
+                           </div>
+                             </div>
+                             )}
                         </ul>
                         <ToastContainer
 position="top-center"
