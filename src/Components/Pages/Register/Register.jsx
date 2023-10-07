@@ -6,14 +6,14 @@ const Register = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-const {SignUp} = useContext(AuthContext)
+const {signUp} = useContext(AuthContext)
 
 
 const handleRegister = e =>{
 e.preventDefault()
-const email = e.target.email.vlaue;
-const password = e.target.password.vlaue
-SignUp(email,password)
+const email = e.target.email.value;
+const password = e.target.password.value;
+signUp(email,password)
 .then(result =>{
   const user = result.user;
   console.log(user)
@@ -59,11 +59,6 @@ SignUp(email,password)
               <span className="label-text">Password</span>
             </label>
             <input type="password" id="password" placeholder="password" name="password" className="input input-bordered" />
-            <label className="label">
-              <a href="/forgetpass" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Register</button>
