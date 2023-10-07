@@ -1,9 +1,17 @@
 import './about.css';
 import teamPicture from './../../../assets/teamwork.jpg';
 import teamPicture2 from './../../../assets/teamwork2.jpg';
+import { Helmet, HelmetData } from 'react-helmet-async';
+
 
 const About = () => {
+  const helmetData = new HelmetData({});
+
   return (
+<>
+<Helmet helmetData={helmetData}>
+        <title>About | EventHorizonX</title>
+      </Helmet>
     <div className='h-fit'>
       <div className="bg h-[180px] w-full md:h-[400px] sm:h-[200px] bg-cover bg-no-repeat bg-center flex justify-center items-center">
         <p className='xl:text-5xl md:text-4xl text-2xl font-bold border-b-2 border-red-600 p-2'>About Us</p>
@@ -40,6 +48,7 @@ const About = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

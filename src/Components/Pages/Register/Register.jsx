@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { GoogleAuthProvider, signInWithPopup, updateProfile } from 'firebase/auth';
 import 'firebase/auth';
 import auth from '../../../../firebase.config';
+import { Helmet, HelmetData } from 'react-helmet-async';
+
 
 const Register = () => {
   const [error, setError] = useState('');
@@ -109,11 +111,16 @@ const Register = () => {
         console.error('Error', error);
         setError(error.message);
       });
-
-
-      
   };
+
+
+  const helmetData = new HelmetData({});
+  
   return (
+<>
+    <Helmet helmetData={helmetData}>
+        <title>Register | EventHorizonX</title>
+      </Helmet>
     <div className="min-h-screen bg-base-200">
     <div className="bg h-[180px] w-full md:h-[360px] sm:h-[200px] bg-cover bg-no-repeat bg-center flex justify-center items-center">
       <p className="xl:text-5xl md:text-4xl text-3xl font-bold border-b-2 border-red-600 p-3">
@@ -122,7 +129,7 @@ const Register = () => {
     </div>
 
     <div className="w-full">
-      <div className="card w-full mx-auto md:mt-12 mt-28 max-w-md shadow-2xl bg-base-100">
+      <div className="card w-full mx-auto md:mt-12 mt-24 max-w-md shadow-2xl bg-base-100">
         <div className="card-body">
           <form onSubmit={handleRegister} className="form-control">
             <div className="form-control">
@@ -217,6 +224,7 @@ const Register = () => {
       theme="dark"
     />
   </div>
+  </>
   );
 };
 

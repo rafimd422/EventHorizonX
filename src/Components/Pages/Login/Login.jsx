@@ -5,6 +5,7 @@ import { AuthContext } from '../../../Context/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 import auth from '../../../../firebase.config';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { Helmet, HelmetData } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -99,10 +100,14 @@ toast.custom((t) => (
     }
 })
     }
+    const helmetData = new HelmetData({});
+
   return (
 <>
 
-
+<Helmet helmetData={helmetData}>
+        <title>Log In | EventHorizonX</title>
+      </Helmet>
 
 
 <div className="min-h-screen bg-base-200">
