@@ -11,11 +11,11 @@ const Service = () => {
   }, []);
 
   return (
-    <div className="h-fit my-20">
+    <div className="h-fit my-20 ">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-16 mx-auto shadow-lg container">
         {service.map((service) => (
           <div
-            className="max-w-sm rounded overflow-hidden shadow-xl border-gray-600 bg-[#080d1d]"
+            className="max-w-sm rounded overflow-hidden shadow-xl mx-auto border-gray-600 bg-[#080d1d]"
             key={service.id}
           >
             <img className="w-full" src={service.img} alt={service.title} />
