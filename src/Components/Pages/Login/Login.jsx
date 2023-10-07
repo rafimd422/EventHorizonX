@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
 
@@ -9,23 +9,21 @@ const Login = () => {
     const [success, setSuccess] = useState('');
 
   const { signIn } = useContext(AuthContext)
-
+const navigate = useNavigate()
     const handleLogIn = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         setError('');
         setSuccess('');
-
         signIn(email,password)
 .then(result =>{
     const user = result.user;
     console.log(user)
-    if(!user.emailVerified){
-      toast.error('Please Varify Your Account')
-      return;
-    }else{
-    setSuccess('Log in Successful');}
+    toast.success('Log in Successful');
+    setTimeout(() => {
+      navigate('/');
+    }, 2000);
 })
 .catch(error=>{
     console.log(error.message)

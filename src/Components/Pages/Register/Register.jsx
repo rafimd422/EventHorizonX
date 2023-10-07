@@ -1,30 +1,78 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-const {signUp} = useContext(AuthContext)
+const {signUp, verify} = useContext(AuthContext)
 
 
+
+
+
+const Navigate = useNavigate()
 const handleRegister = e =>{
 e.preventDefault()
 const email = e.target.email.value;
 const password = e.target.password.value;
+setSuccess('')
+setError('')
+
+
+
+const hasCapitalLetter = /[A-Z]/.test(password);
+const hasSpecialCharacter = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password);
+
+if (!hasCapitalLetter) {
+  setError('Password must contain at least one capital letter');
+  return;
+}
+
+if (!hasSpecialCharacter) {
+  setError('Password must contain at least one special character');
+  return;
+}
+
 signUp(email,password)
 .then(result =>{
   const user = result.user;
   console.log(user)
-
-  setSuccess('Account Created Successfully')
-  
+  toast.success('Registration Successfull!', {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });  setTimeout(() => {
+    Navigate('/');
+  }, 3000);
 })
 .catch(error =>{
   console.log(error.message)
+  if(error.message === 'Firebase: Password should be at least 6 characters (auth/weak-password).'){
+    setError('Password should be at least 6 characters')
+  }
+//   else if(!emailVerified){
+// setError('')
+//   }
+  else{
   setError(error.message)
+}
 })
+// verify()
+// .then(()=>{
+//   setSuccess('Please Cheak Your Email and Verify!')
+// })
+// .catch(error =>{
+//   console.log(error)
+// })
 }
 
 
@@ -78,6 +126,18 @@ signUp(email,password)
       </div>
     </div>
     </div>
+    <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
     </div>
   )
 }
