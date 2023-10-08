@@ -10,6 +10,7 @@ import Blog from '../Pages/Blog/Blog';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import ServiceDetails from '../Pages/ServiceDetails';
+import PrivateRoute from '../../Context/privateRoute/PrivateRoute';
 
 const routes = createBrowserRouter([
 
@@ -28,11 +29,11 @@ const routes = createBrowserRouter([
             },
             {
               path: "/event",
-              element: <Event />,
+              element: <PrivateRoute><Event /></PrivateRoute>,
             },
             {
               path: "/blog",
-              element: <Blog />,
+              element: <PrivateRoute><Blog /></PrivateRoute>,
             },
             {
               path: "/login",
@@ -44,7 +45,7 @@ const routes = createBrowserRouter([
             },
             {
               path: "/serviceDetails/:id",
-              element: <ServiceDetails />,
+              element: <PrivateRoute><ServiceDetails /></PrivateRoute>,
               loader: ()=> fetch('/services.json')
             },
           ]

@@ -12,9 +12,8 @@ const Login = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-  const { signIn } = useContext(AuthContext)
+  const { signIn} = useContext(AuthContext)
 const navigate = useNavigate()
-
 
 // Handler for google log in
 const loginGoogle = () =>{
@@ -101,6 +100,10 @@ toast.custom((t) => (
 })
     }
     const helmetData = new HelmetData({});
+
+
+
+
 
   return (
 <>

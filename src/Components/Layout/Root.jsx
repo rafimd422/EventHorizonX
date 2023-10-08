@@ -4,6 +4,7 @@ import Nav from '../FixedRoute/Nav'
 import Footer from '../FixedRoute/Footer';
 
 const Root = () => {
+
   return (
 <>
 <Nav />

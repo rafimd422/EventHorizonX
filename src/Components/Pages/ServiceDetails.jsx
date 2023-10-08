@@ -11,7 +11,7 @@ const ServiceDetails = () => {
 
   const getData = data.find(data => data.id === parseId)
   console.log(getData)
-  const { title, description, hashtags, img } = getData;
+  const { title, description, img } = getData;
   const helmetData = new HelmetData({});
 
   return (
