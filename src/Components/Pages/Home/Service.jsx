@@ -11,11 +11,14 @@ const Service = () => {
   }, []);
   return (
     <div className="h-fit my-20 ">
-<h3 className="text-3xl font-bold border-b-2 border-red-600 p-3 w-fit mx-auto">Our Services</h3>
+<h3 data-aos="zoom-in-up"
+data-aos-duration="1000" className="text-3xl font-bold border-b-2 border-red-600 p-3 w-fit mx-auto">Our Services</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-16 mx-auto shadow-lg container">
         {service.map((service) => (
           <div
+          data-aos="zoom-in-down"
+          data-aos-duration="1500"
             className="max-w-sm rounded overflow-hidden shadow-xl mx-auto border-gray-600 bg-[#080d1d]"
             key={service.id}
           >

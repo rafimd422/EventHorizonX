@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const QuesAndAnswer = () => {
 
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
   const faqData = [
     {
@@ -36,9 +43,7 @@ const QuesAndAnswer = () => {
     }
   ];
   
-  // Example of accessing the first FAQ:
-  console.log(faqData[0].question); // Output: "How can your event management team help make our corporate event a success?"
-  console.log(faqData[0].answer);   // Output: "Our experienced team specializes in creating memorable and successful corporate events..."
+
   
 
   return (
@@ -47,7 +52,7 @@ const QuesAndAnswer = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[520px] text-center lg:mb-20">
-              <span className="mb-2 block text-3xl font-semibold text-primary">
+              <span data-aos="zoom-out-down" className="mb-2 block text-3xl font-semibold text-primary">
               Frequently Asked Questions (FAQs)
               </span>
             </div>
@@ -60,12 +65,16 @@ const QuesAndAnswer = () => {
 {faqData.slice(0,3).map(data =><AccordionItem
               header={data.question}
               text={data.answer}
+
             />)}
           </div>
           <div className="w-full px-4 lg:w-1/2">
           {faqData.slice(3,6).map(data =><AccordionItem
               header={data.question}
               text={data.answer}
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
             />)}
           </div>
         </div>
@@ -113,7 +122,8 @@ const AccordionItem = ({ header, text }) => {
     setActive(!active);
   };
   return (
-    <div className="single-faq mb-8 w-full rounded-lg border border-[#3c3d42] bg-base-200 p-4 sm:p-8 lg:px-6 xl:px-8">
+    <div data-aos="zoom-out-right"
+    className="single-faq mb-8 w-full rounded-lg border border-[#3c3d42] bg-base-200 p-4 sm:p-8 lg:px-6 xl:px-8">
       <button
         className={`faq-btn flex w-full text-left`}
         onClick={() => handleToggle()}

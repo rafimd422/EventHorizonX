@@ -89,6 +89,7 @@ const Blog = () => {
   
 
   return (
+  
     <>
 <Helmet helmetData={helmetData}>
         <title>Blog | EventHorizonX</title>

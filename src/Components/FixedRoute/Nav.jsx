@@ -7,9 +7,17 @@ import { AuthContext } from "../../Context/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import { signOut } from "firebase/auth";
 import auth from "../../../firebase.config";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import { useEffect } from 'react';
 
 export default function Nav() {
     const [navbar, setNavbar] = useState(false);
+
+
+    useEffect(() => {
+        AOS.init();
+      }, [])
 
 const {user} = useContext(AuthContext)
 console.log(user)
@@ -37,7 +45,9 @@ const logOut = () =>{
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block text-uppercase">
-                            <h2 className="text-2xl font-bold"><span className="text-orange-700">Event</span>Horizon<span className="text-red-800 text-3xl">X</span></h2>
+                            <h2 data-aos="fade-right"
+     data-aos-easing="linear"
+     data-aos-duration="1500" className="text-2xl font-bold"><span className="text-orange-700">Event</span>Horizon<span className="text-red-800 text-3xl">X</span></h2>
                         <div className="md:hidden">
                             <button
                                 className="p-4 rounded-md"
@@ -59,7 +69,9 @@ const logOut = () =>{
                             navbar ? "block" : "hidden"
                         }`}
                     >
-                        <ul className="uppercase items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                        <ul data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500" className="uppercase items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li className=" hover:text-blue-600 text-center">
                                 <NavLink to={'/'}>Home</NavLink>
                             </li>
