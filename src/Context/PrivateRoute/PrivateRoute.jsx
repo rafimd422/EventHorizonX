@@ -1,10 +1,13 @@
 import React, { useContext } from 'react'
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import { BallTriangle } from 'react-loader-spinner';
 
 const PrivateRoute = ({children}) => {
 const {user, loading} = useContext(AuthContext)
+const location = useLocation()
+console.log(location)
+console.log(location.pathname)
 
 if(loading){
   return (
@@ -25,7 +28,7 @@ if(loading){
 if(user !== null ){
   return children;
 }
-return <Navigate to={'/login'}/>
+return <Navigate state={location.pathname} to={'/login'}/>
 
 }
 

@@ -43,47 +43,47 @@ at Technology Conference</p>
 </div>
 
 
-<div class="grid lg:grid-cols-2 grid-cols-1 gap-2 antialiased text-gray-900 container mx-auto my-8">
+<div className="grid lg:grid-cols-2 grid-cols-1 gap-2 antialiased text-gray-900 container mx-auto my-8">
 <div data-aos="zoom-out-right">
     
-    <img src={speaker4} alt="speakers imgee" class="md:max-w-lg mx-auto object-cover object-center rounded-lg shadow-md sm:p-2 p-8" />    
+    <img src={speaker4} alt="speakers imgee" className="md:max-w-lg mx-auto object-cover object-center rounded-lg shadow-md sm:p-2 p-8" />    
     
- <div class="relative px-4 -mt-16 max-w-4xl">
-   <div class="bg-white p-6 rounded-lg shadow-lg mx-auto">
-    <div class="flex items-baseline">
-      <div class=" text-gray-600 uppercase text-xs font-semibold tracking-wider">
+ <div className="relative px-4 -mt-16 max-w-4xl">
+   <div className="bg-white p-6 rounded-lg shadow-lg mx-auto">
+    <div className="flex items-baseline">
+      <div className=" text-gray-600 uppercase text-xs font-semibold tracking-wider">
       1:00 am - 4:00 am
   </div>  
     </div>
     
-    <h4 class="mt-1 text-gray-700 text-xl font-semibold uppercase truncate">Sarah Anderson</h4>
-    <h4 class="mt-1 text-2xl font-bold uppercase leading-tight truncate">Registration For Opening Workshop</h4>
+    <h4 className="mt-1 text-gray-700 text-xl font-semibold uppercase truncate">Sarah Anderson</h4>
+    <h4 className="mt-1 text-2xl font-bold uppercase leading-tight truncate">Registration For Opening Workshop</h4>
  
-  <div class="mt-4">
+  <div className="mt-4">
 
-    <span class="text-sm text-gray-600">We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, and to have epic adventures</span>
+    <span className="text-sm text-gray-600">We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, and to have epic adventures</span>
   </div>  
   </div>
  </div>
 </div>
 <div data-aos="zoom-out-left">
     
-    <img src={speaker2} alt="speakers imgee" class="md:max-w-lg mx-auto object-cover object-center rounded-lg shadow-md sm:p-2 p-8" />    
+    <img src={speaker2} alt="speakers imgee" className="md:max-w-lg mx-auto object-cover object-center rounded-lg shadow-md sm:p-2 p-8" />    
     
- <div class="relative px-4 -mt-16 max-w-4xl">
-   <div class="bg-white p-6 rounded-lg shadow-lg mx-auto">
-    <div class="flex items-baseline">
-      <div class=" text-gray-600 uppercase text-xs font-semibold tracking-wider">
+ <div className="relative px-4 -mt-16 max-w-4xl">
+   <div className="bg-white p-6 rounded-lg shadow-lg mx-auto">
+    <div className="flex items-baseline">
+      <div className=" text-gray-600 uppercase text-xs font-semibold tracking-wider">
       1:00 am - 4:00 am
   </div>  
     </div>
     
-    <h4 class="mt-1 text-gray-700 text-xl font-semibold uppercase truncate">David Lee</h4>
-    <h4 class="mt-1 text-2xl font-bold uppercase leading-tight truncate">Modern Marketing Summit Sydney</h4>
+    <h4 className="mt-1 text-gray-700 text-xl font-semibold uppercase truncate">David Lee</h4>
+    <h4 className="mt-1 text-2xl font-bold uppercase leading-tight truncate">Modern Marketing Summit Sydney</h4>
  
-  <div class="mt-4">
+  <div className="mt-4">
 
-    <span class="text-sm text-gray-600">We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, and to have epic adventures</span>
+    <span className="text-sm text-gray-600">We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, and to have epic adventures</span>
   </div>  
   </div>
  </div>

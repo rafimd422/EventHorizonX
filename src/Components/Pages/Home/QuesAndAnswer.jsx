@@ -62,14 +62,13 @@ const QuesAndAnswer = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-1/2">
 
-{faqData.slice(0,3).map(data =><AccordionItem
+{faqData.slice(0,3).map(data =><AccordionItem key={data.id}
               header={data.question}
               text={data.answer}
-
             />)}
           </div>
           <div className="w-full px-4 lg:w-1/2">
-          {faqData.slice(3,6).map(data =><AccordionItem
+          {faqData.slice(3,6).map(data =><AccordionItem key={data.id}
               header={data.question}
               text={data.answer}
               data-aos="fade-down"
@@ -102,9 +101,9 @@ const QuesAndAnswer = () => {
               y2="-418.681"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#3056D3" stop-opacity="0.36" />
-              <stop offset="1" stop-color="#F5F2FD" stop-opacity="0" />
-              <stop offset="1" stop-color="#F5F2FD" stop-opacity="0.096144" />
+              <stop stopColor="#3056D3" stopOpacity="0.36" />
+              <stop offset="1" stopColor="#F5F2FD" stopOpacity="0" />
+              <stop offset="1" stopColor="#F5F2FD" stopOpacity="0.096144" />
             </linearGradient>
           </defs>
         </svg>

@@ -9,7 +9,7 @@ const Banner = () => {
     AOS.init();
   }, [])
   return (
-    <div className='md:-mt-20 back bg-no-repeat bg-cover bg-center h-screen flex flex-wrap items-center xl:px-20 md:px-12 lg:justify-around justify-center'>
+    <div className='md:-mt-20 back bg-no-repeat bg-cover bg-center md:h-screen h-fit flex md:flex-nowrap flex-wrap items-center xl:px-20 md:px-12 lg:justify-around justify-center'>
       <div data-aos="fade-up" className='xl:mt-0 lg:mt-12 md:mt-16'>
         <h3 className="lg:text-6xl text-5xl font-bold font-mono leading-1 my-4 md:mx-0 mx-4">
           Turning Ideas into<br /> <span className='text-orange-400'>Impactful Events</span>
