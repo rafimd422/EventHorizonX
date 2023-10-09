@@ -41,17 +41,11 @@ const OurFeatures = () => {
 
   return (
 <section className="m-4 md:m-8 text-gray-100">
-	<div className="container mx-auto p-4 my-6 space-y-2 text-center">
-		<h2  data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="1000" className="md:text-5xl text-4xl mb-4 font-bold text-primary">Built to empower every team</h2>
-		<p data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom" className="text-gray-400 text-3xl font-bold border-b-2 border-red-600 p-3 w-fit mx-auto">Our Features</p>
-	</div>
+
 	<div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
     {features.map((feature) => (
   <div data-aos="fade-up"
-  data-aos-duration="800" key={feature.id} className="flex flex-col items-center p-4">
+  data-aos-duration="800" key={feature.id} className="flex flex-col items-center md:mx-0 mx-6 p-4">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-8 h-8 text-violet-400">
       <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"></path>
     </svg>

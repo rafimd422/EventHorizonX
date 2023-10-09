@@ -95,7 +95,7 @@ const Blog = () => {
         <title>Blog | EventHorizonX</title>
       </Helmet>
     <div className='h-fit'>
-      <div className="bg h-[180px] w-full md:h-[400px] sm:h-[200px] bg-cover bg-no-repeat bg-center flex justify-center items-center">
+      <div data-aos="zoom-out-up" className="bg h-[180px] w-full md:h-[400px] sm:h-[200px] bg-cover bg-no-repeat bg-center flex justify-center items-center">
        <p className='xl:text-5xl md:text-4xl text-2xl font-bold border-b-2 border-red-600 p-3'>Blogs</p>
       </div>
       
@@ -112,7 +112,7 @@ const Blog = () => {
               <span className="font-semibold text-lg text-primary mb-2 block">
                 Our Blogs
               </span>
-              <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4">
+              <h2 data-aos="zoom-out-left" className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4">
                 Our Recent Blogs
               </h2>
             </div>
@@ -121,7 +121,8 @@ const Blog = () => {
         <div className="flex flex-wrap md:flex-row flex-row-reverse justify-center -mx-4">
  
         {blogPosts.map(blog =>
-          ( <div key={blog.id} className="shadow-xl w-full md:w-1/2 lg:w-1/3 px-4 my-2">
+          ( <div key={blog.id}  data-aos="fade-up"
+          data-aos-duration="3000" className="shadow-xl w-full md:w-1/2 lg:w-1/3 px-4 my-2">
           <div className="max-w-[370px] mx-auto mb-10">
             <div className="rounded overflow-hidden mb-8">
               <img

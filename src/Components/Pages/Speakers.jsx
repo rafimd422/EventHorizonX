@@ -36,7 +36,7 @@ const Speakers = () => {
       <p className='lg:text-4xl text-2xl font-bold text-center my-6 mb-8 text-red-300'>Meet the Visionaries: Our Esteemed Speakers</p>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-4 justify-center">
         {speakers.map((speaker) => (
-          <div key={speaker.id} className="card mx-auto card-compact w-96 bg-gray-900 shadow-xl">
+          <div data-aos="zoom-in-up" key={speaker.id} className="card mx-auto card-compact w-96 bg-gray-900 shadow-xl">
             <figure><img src={speaker.img} className='h-64 w-full object-cover' alt={speaker.name} /></figure>
             <div className="card-body">
               <h2 className="card-title">{speaker.name}</h2>

@@ -123,13 +123,15 @@ toast.custom((t) => (
       <div className="card-body">
         <form onSubmit={handleLogIn} className="form-control">
          
-          <div className="form-control">
+          <div data-aos="fade-up"
+     data-aos-duration="2000" className="form-control">
             <label className="label" htmlFor="email">
               <span className="label-text">Email</span>
             </label>
             <input type="text" id="email" placeholder="email" name="email" required className="input input-bordered" />
           </div>
-          <div className="form-control">
+          <div data-aos="fade-up"
+     data-aos-duration="2000" className="form-control">
             <label className="label" htmlFor="password">
               <span className="label-text">Password</span>
             </label>
@@ -140,12 +142,14 @@ toast.custom((t) => (
               </a>
             </label>
           </div>
-          <div className="form-control mt-6">
+          <div data-aos="fade-up"
+     data-aos-duration="3000" className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
           </div>
         </form>
 {/* google button  */}
-        <button onClick={loginGoogle}
+        <button data-aos="fade-down"
+     data-aos-duration="2000" onClick={loginGoogle}
     className="px-4 py-2 border flex gap-2 border-slate-200 rounded-lg text-slate-700 bg-white hover:border-slate-400 hover:text-slate-900 p-4">
     <img className="w-6 h-6 ms-auto" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" />
     <span className='me-auto'>Continue with Google</span>
@@ -153,7 +157,8 @@ toast.custom((t) => (
 {/* google button  */}
 {error && <p className="text-red-700">{error}</p>}
         {success && <p className="text-success">{success}</p>}
-        <p>New to our website? Please <Link className='text-blue-800 font-bold' to={'/register'}>Register</Link></p>
+        <p data-aos="fade-up"
+     data-aos-duration="2000">New to our website? Please <Link className='text-blue-800 font-bold' to={'/register'}>Register</Link></p>
       </div>
       <ToastContainer
 position="top-center"

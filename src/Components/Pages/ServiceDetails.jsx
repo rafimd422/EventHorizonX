@@ -19,7 +19,7 @@ const ServiceDetails = () => {
       <Helmet helmetData={helmetData}>
         <title>{title} | EventHorizonX</title>
       </Helmet>
-      <div className='container mx-auto mt-4'>
+      <div data-aos="fade-up" className='container mx-auto mt-4'>
         <img src={img} className='xl:w-9/12 mx-auto w-full sm:p-0 p-2' alt="" />
         <h3 className='my-3 lg:text-4xl text-3xl font-bold sm:ms-0 ms-4 text-red-300'>{title}</h3>
         <p className='my-3 sm:p-2 p-4 text-justify'>{description}</p>
@@ -28,13 +28,16 @@ const ServiceDetails = () => {
       <Speakers />
 
       <div>
-        <p className='container mx-auto text-justify mt-4 sm:p-1 p-4'>We understand that every corporate event has a unique story to tell, and we are dedicated to helping you craft and narrate that story brilliantly, ensuring that it resonates with your audience, leaves a lasting impression, and aligns seamlessly with your corporate mission and vision.</p>
-        <h3 className='lg:text-4xl sm:text-3xl text-2xl text-center font-bold mt-12 text-red-200'>Contact With Us for Any Query</h3>
+        <p data-aos="zoom-out" className='container mx-auto text-justify mt-4 sm:p-1 p-4'>We understand that every corporate event has a unique story to tell, and we are dedicated to helping you craft and narrate that story brilliantly, ensuring that it resonates with your audience, leaves a lasting impression, and aligns seamlessly with your corporate mission and vision.</p>
+        <h3 data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" className='lg:text-4xl sm:text-3xl text-2xl text-center font-bold mt-12 text-red-200'>Contact With Us for Any Query</h3>
         <div className="flex justify-center w-full">
           <div className="w-full lg:w-7/12 md:my-16 my-12">
-            <div className="flex flex-wrap justify-center sm:ms-0 ms-24">
+          <div className="flex flex-wrap justify-center sm:ms-0 ms-24">
               {/* Technical Support */}
-              <div className="mb-12 w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mx-auto md:px-3 lg:px-6">
+              <div data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom" className="mb-12 w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mx-auto md:px-3 lg:px-6">
                 <div className="flex justify-center items-center">
                   <div className="mr-4">
                     <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
@@ -54,7 +57,8 @@ const ServiceDetails = () => {
               </div>
 
               {/* Sales Questions */}
-              <div className="mb-12 w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mx-auto md:px-3 lg:px-6">
+              <div data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" className="mb-12 w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mx-auto md:px-3 lg:px-6">
                 <div className="flex items-start">
                   <div className="mr-4">
                     <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
@@ -74,7 +78,8 @@ const ServiceDetails = () => {
               </div>
 
               {/* Press */}
-              <div className="mb-12 w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mx-auto md:px-3 lg:px-6">
+              <div data-aos="fade-up"
+     data-aos-duration="3000" className="mb-12 w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mx-auto md:px-3 lg:px-6">
                 <div className="flex items-start">
                   <div className="mr-4">
                     <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
@@ -94,7 +99,9 @@ const ServiceDetails = () => {
               </div>
 
               {/* Bug Report */}
-              <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mx-auto md:px-3 lg:px-6">
+              <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500" className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mx-auto md:px-3 lg:px-6">
                 <div className="flex items-start">
                   <div className="mr-4">
                     <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
@@ -113,6 +120,7 @@ const ServiceDetails = () => {
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </div>

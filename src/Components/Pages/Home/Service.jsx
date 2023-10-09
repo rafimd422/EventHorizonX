@@ -19,19 +19,23 @@ data-aos-duration="1000" className="text-3xl font-bold border-b-2 border-red-600
           <div
           data-aos="zoom-in-down"
           data-aos-duration="1500"
-            className="max-w-sm rounded overflow-hidden shadow-xl mx-auto border-gray-600 bg-[#080d1d]"
+            className="max-w-sm rounded overflow-hidden shadow-xl mx-auto border-gray-600 md:p-0 p-5 bg-[#080d1d]"
             key={service.id}
           >
             <img className="w-full" src={service.img} alt={service.title} />
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{service.title}</div>
               <p className="text-gray-400 text-base">
-                {service.description.slice(0, 130)}{" "}
-                <Link className="text-blue-700 font-bold" to={`/serviceDetails/${service.id}`}>
+                {service.description.slice(0, 130)}
+                
+                <Link className="text-blue-600 font-bold" to={`/serviceDetails/${service.id}`}>
                   Read more...
                 </Link>
               </p>
+              <br />
+              <p>Price is Depends on your requirement</p>
             </div>
+
             <div className="px-6 pt-4 pb-2">
               {service.hashtags.map((hash) => (
                 <span
