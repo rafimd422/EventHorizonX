@@ -1,8 +1,24 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# EventHorizonX (A Corporate Event Management Company)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# OverView 
+
+Welcome to EventHorizonX (Corporate Event Management Website), built with React.js, Firebase for authentication, React Router for smooth navigation and routing, Tailwind CSS for styling, and the Fetch API for Data fetching. Our website also features private route functionality to ensure secure and controlled access for our users.
+
+## LIve Link
+
+https://corporate-event-manageme-1b072.web.app/
+
+
+## Features
+
+- Email password Login and register system
+- Google Login System
+- Responsive Design
+- Private Route(Only users   can access)
+- Scroll Animation
+
+
+
+
