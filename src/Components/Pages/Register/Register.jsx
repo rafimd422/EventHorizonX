@@ -5,15 +5,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GoogleAuthProvider, signInWithPopup, updateProfile } from 'firebase/auth';
 import 'firebase/auth';
-import auth from '../../../../firebase.config';
 import { Helmet, HelmetData } from 'react-helmet-async';
+import axios from 'axios';
 
 
 const Register = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const { signUp: contextSignUp, verify } = useContext(AuthContext);
+  const { signUp: contextSignUp } = useContext(AuthContext);
 
   const Navigate = useNavigate();
   const loginGoogle = () => {
@@ -54,25 +54,34 @@ const Register = () => {
   const navigate = useNavigate();
 
 
+
   const handleRegister = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
+
+
+// preparing our api to make image upload input working
+    const apiKey = import.meta.env.VITE_IMGBB_API_KEY
+    const api = `https://api.imgbb.com/1/upload?key=${apiKey}`
+    const photo = e.target.photo.files[0];
+    const formData = new FormData();
+    formData.append('image', photo);
+    axios.post(api, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+      .then(response => {
+        const photoURL = response.data?.data?.display_url;
+        const email = e.target.email.value;
     const password = e.target.password.value;
-    const photoURL = e.target.photoURL.value; 
     const name = e.target.name.value;
     setSuccess('');
     setError('');
 
     const hasCapitalLetter = /[A-Z]/.test(password);
-    const hasSpecialCharacter = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password);
 
     if (!hasCapitalLetter) {
       setError('Password must contain at least one capital letter');
-      return;
-    }
-
-    if (!hasSpecialCharacter) {
-      setError('Password must contain at least one special character');
       return;
     }
 
@@ -111,6 +120,14 @@ const Register = () => {
         console.error('Error', error);
         setError(error.message);
       });
+      })
+      .catch(error => {
+        console.error('Error uploading photo:', error.message);
+      });
+    
+
+
+    
   };
 
 
@@ -145,18 +162,7 @@ const Register = () => {
                 className="input input-bordered"
               />
             </div>
-            <div className="form-control">
-              <label className="label" htmlFor="Photo">
-                <span className="label-text">Photo Url</span>
-              </label>
-              <input
-                type="url"
-                id="photoURL"
-                placeholder="Photo Url"
-                name="PhotoURl"
-                className="input input-bordered"
-              />
-            </div>
+
             <div className="form-control">
               <label className="label" htmlFor="email">
                 <span className="label-text">Email</span>
@@ -181,6 +187,23 @@ const Register = () => {
                 name="password"
                 className="input input-bordered"
               />
+            </div>
+            <div className="form-control">
+            <div className="my-3 w-96">
+          <label
+            htmlFor="Photo"
+            className="label"
+          > <span className='label-text'>          Put Your Photo here
+          </span>
+          </label>
+          <input
+            className="relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded-lg input-bordered input bg-clip-padding px-3 py-[0.32rem] font-normal leading-[2.15] text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
+            id="Photo"
+            type="file"
+            required
+            name="photo"
+          />
+      </div>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
